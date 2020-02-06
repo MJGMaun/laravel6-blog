@@ -11,14 +11,14 @@
     <div id="page">
         <div class="container">
             <div class="row">
-                <div class="12u">
+                <div class="col-12">
                     <section id="content" >
                         <a href="{{ route('posts.index') }}" class="text-primary">< Go back</a><br><br>
                         <header>
                             <h2>{{ $post->title }}</h2>
                         </header>
                         <p>{!! $post->content !!}</p>
-                        <div class="btn-group inline pull-left" data-toggle="buttons-checkbox">
+                        <div class="btn-group inline pull-left">
                             <a href="{{ route('posts.edit', $post) }}" class="btn btn-sm btn-info">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
                             <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                 @csrf

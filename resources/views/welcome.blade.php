@@ -18,7 +18,7 @@
     <div id="page">
         <div class="container">
             <div class="row">
-                <div class="9u">
+                <div class="col-9">
                     <section id="box2">
                         <header>
                             <h2>About the Author</h2>
@@ -27,7 +27,7 @@
                         <p>Russel Van Dulken, better known as Twistzz, is a Canadian Counter-Strike: Global Offensive player currently playing for Team Liquid. He has previously played for top teams such as Team SoloMid and Misfits. Twistzz was named the MVP of ESL One New York 2018 and IEM Sydney 2019 by HLTV.</p>
                     </section>
                 </div>
-                <div class="3u">
+                <div class="col-3">
                     <section id="box3">
                         <header>
                             <h2>Latest Posts</h2>

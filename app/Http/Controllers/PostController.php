@@ -67,8 +67,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
-        return "asdasd";
-        // return view('post/update', compact('post'));
+        return view('post/update', compact('post'));
     }
 
     /**
@@ -100,7 +99,7 @@ class PostController extends Controller
 
    public function validatePost() {
         return request()->validate([
-            'title' => 'required',
+            'title' => ['required'],
             'content' => 'required'
         ]);
    }

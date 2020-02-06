@@ -20,7 +20,7 @@
                             @foreach ($posts as $post)
                                 <li class="{{ $loop->index === 0 ? 'first' : '' }}">
                                     <a href="{{ $post->path() }}"> {{ $post->title   }}</a>
-                                    <div> {{ $post->excerpt }}<a href="{{ $post->path() }}" class="text-primary"> Show more </a></div>
+                                    <div> {{ $post->excerpt }} <a href="{{ $post->path() }}" class="text-primary">Show more </a></div>
                                 </li>
                             @endforeach
                         </ul>
