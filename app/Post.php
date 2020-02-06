@@ -10,7 +10,7 @@ class Post extends Model
     //
     use SoftDeletes;
     Protected $dates = ['deleted_at'];
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'excerpt', 'content'];
 
     public function path() {
         return route('posts.show', $this);

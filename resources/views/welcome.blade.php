@@ -7,7 +7,7 @@
             <!-- Logo -->
             <div id="logo">
                 <h1><a href="#">Russel "Twistzz" Van Dulken</a></h1>
-                <span> Laravel6 Blog </span>
+                <span> A Laravel6 Blog </span>
             </div>
 
             @include('layout.partials.nav')
@@ -17,7 +17,7 @@
 @section('content')
     <div class="container">
         <div class="homepage">
-            <div id="page">
+            <div class="page">
                 <div class="row">
                     <div class="col-9">
                         <section id="box2">
@@ -39,7 +39,7 @@
                             <ul class="style1">
                                 @foreach ($posts as $post)
                                 <li class="{{ $loop->index === 0 ? 'first' : '' }}">
-                                    <a href="{{ route('posts.show', $post) }}"> {{ $post->title   }}</a>
+                                    <a href="{{ $post->path() }}"> {{ $post->title }}</a>
                                 </li>
                                 @endforeach
                             </ul>

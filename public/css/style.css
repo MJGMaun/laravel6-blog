@@ -682,7 +682,7 @@ ul.style3 .first {
 	}
 
 
-	#page {
+	.page {
 		padding: 1em 0 3em 0;
         background: #FFF;
         min-height: calc(100vh - 352px);

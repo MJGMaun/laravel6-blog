@@ -18,21 +18,21 @@
                             <li class="breadcrumb-item active" aria-current="page">{{ $post->title }}</li>
                         </ol>
                     </nav>
-                    <section id="page">
+                    <div class="page">
                         <header>
                             <h2>{{ $post->title }}</h2>
+                            <small>{{ $post->excerpt }}</small>
                         </header>
                         <p>{!! $post->content !!}</p>
                         <div class="btn-group inline pull-left">
-                            <a href="{{ route('posts.edit', $post) }}"
-                                class="btn btn-sm btn-info">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{{ route('posts.edit', $post) }}" class="btn btn-sm btn-info">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
                             <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>

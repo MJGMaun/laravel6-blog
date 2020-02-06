@@ -100,6 +100,7 @@ class PostController extends Controller
    public function validatePost() {
         return request()->validate([
             'title' => ['required'],
+            'excerpt' => ['required'],
             'content' => 'required'
         ]);
    }
