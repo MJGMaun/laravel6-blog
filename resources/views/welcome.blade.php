@@ -6,8 +6,8 @@
 
             <!-- Logo -->
             <div id="logo">
-                <h1><a href="#">Russel "Twistzz" Van Dulken</a></h1>
-                <span> A Laravel6 Blog </span>
+                <h1><a href="#">Russel <span1 style="color:#ab7442;">"Twistzz"</span1> Van Dulken</a></h1>
+                <p> A Laravel6 Blog </p>
             </div>
 
             @include('layout.partials.nav')

@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-10">
                             <header>
-                                <h2>Blog Posts</h2>
+                                <h2>Blog <span style="color:#ab7442;">Posts</span></h2>
                             </header>
                         </div>
                         <div class="col-2 text-right">
