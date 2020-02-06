@@ -683,9 +683,9 @@ ul.style3 .first {
 
 
 	#page {
-		padding: 5em 0em;
+		padding: 1em 0 3em 0;
         background: #FFF;
-        min-height: calc(100vh - 260px);
+        min-height: calc(100vh - 352px);
 	}
 
 	#content header
@@ -724,13 +724,13 @@ ul.style3 .first {
         bottom: 0px;
         left: 0px;
         right: 0px;
-        margin-bottom: 0px;
+        margin: 0 0 0 0;
 	}
 
 	#copyright .container
 	{
 		padding: 3em 0em;
-		border-top: 1px solid;
+		/* border-top: 1px solid; */
 		border-color: rgba(0,0,0,.1);
 	}
 

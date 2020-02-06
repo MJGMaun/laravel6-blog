@@ -135,6 +135,9 @@
 /*********************************************************************************/
 
 	.homepage #page {
+        padding: 5em 0em;
+        background: #FFF;
+        min-height: calc(100vh - 260px);
 		overflow: hidden;
 	}
 

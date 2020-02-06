@@ -29,12 +29,19 @@
 <body>
     <div id="wrapper">
         @yield('header')
+        {{-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav> --}}
         @yield('content')
         @yield('footer')
         <!-- Copyright -->
         <div id="copyright">
             <div class="container">
-                Design: <a href="http://templated.co">TEMPLATED</a> Edited: <a href="http://unsplash.com">MJMaun</a>
+                Design: <a href="http://templated.co">TEMPLATED</a> Edited: <a href="https://github.com/MJGMaun" target="_blank">MJMaun</a>
             </div>
         </div>
     </div>
