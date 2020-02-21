@@ -1,7 +1,9 @@
 @extends('layouts.app')
-
+@section('title', 'Confirm Password')
+@section('header')
+@endsection
 @section('content')
-<div class="container">
+<div class="page">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
