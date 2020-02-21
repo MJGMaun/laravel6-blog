@@ -6,6 +6,7 @@ use App\Post;
 use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -49,8 +50,8 @@ class PostController extends Controller
         // dd(request()->all());
         $this->validatePost();
 
-        $post = new Post(request(['title', 'excerpt', 'content'])); // Associatie Array
-        $post->user_id = 1;
+        $post = new Post(request(['title', 'excerpt', 'content'])); // Associative Array
+        $post->user_id = Auth::id();
         $post->save();
 
         $post->tags()->attach(request('tags'));
@@ -80,8 +81,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
-        return view('post/update', compact('post'));
+        $post['tags'] = Post::findOrFail($post->id)->tags->pluck('id')->toArray();
+        // return $post;
+        return view('post/update', [
+            'post' => $post,
+            'tags' => Tag::all()
+        ]);
     }
 
     /**
@@ -93,8 +98,18 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
-        $post->update($this->validatePost());
+        // dd(request()->all());
+        $this->validatePost();
+
+        $post->user_id = Auth::id();
+        $post->title = request('title');
+        $post->excerpt = request('excerpt');
+        $post->content = request('content');
+        $post->save();
+
+        $post->tags()->detach();
+        $post->tags()->attach(request('tags'));
+
         return redirect(route('posts.index'));
     }
 

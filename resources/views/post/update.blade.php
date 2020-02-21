@@ -56,6 +56,18 @@
                                     id="content"
                                     rows="10">{{ $post->content }}</textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="tags">Tags</label>
+                            <select class="custom-select" name="tags[]" multiple>
+                                @foreach ($tags as $tag)
+                                    <option value="{{ $tag->id }}" @if(in_array($tag->id, $post->tags)) selected
+                                         @endif>{{ $tag->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('tags')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
                         <a href={{ route('posts.index') }} class="btn btn-sm btn-danger">Cancel</a>
                         <button type="submit" class="btn btn-sm btn-primary">Submit</button>
                     </form>

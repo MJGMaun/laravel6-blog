@@ -27,6 +27,7 @@
                                 @endforeach
                             </div>
                         </div>
+                        @if (Auth::id() === $post->user_id)
                         <div class="spacer-30"></div>
                         <div class="btn-group inline pull-left">
                             <a href="{{ route('posts.edit', $post) }}" class="btn btn-sm btn-info">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -36,6 +37,7 @@
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
