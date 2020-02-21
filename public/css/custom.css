@@ -1,0 +1,42 @@
+.login-nav {
+    position: absolute;
+    top: 15px;
+    right: 36px;
+    display: block;
+    padding: 1em 1.5em;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 1em;
+}
+
+.login-nav > a {
+    text-decoration: none;
+    color: #96979c;
+
+}
+
+.login-nav > a:hover {
+    color: #FFF;
+}
+
+
+.spacer-10 {
+    margin-top: 10px;
+}
+
+.spacer-15 {
+    margin-top: 15px;
+}
+
+.spacer-20 {
+    margin-top: 20px;
+}
+
+.spacer-25 {
+    margin-top: 25px;
+}
+
+.spacer-30 {
+    margin-top: 30px;
+}

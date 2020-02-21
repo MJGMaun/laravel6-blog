@@ -1,11 +1,6 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('title', 'Create Post')
 @section('header')
-    <div id="header">
-        <div class="container">
-            @include('layout.partials.nav')
-        </div>
-    </div>
 @endsection
 @section('content')
     <div class="container">

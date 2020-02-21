@@ -1,11 +1,6 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('title', $post->title)
 @section('header')
-    <div id="header">
-        <div class="container">
-            @include('layout.partials.nav')
-        </div>
-    </div>
 @endsection
 @section('content')
         <div class="container">
@@ -32,7 +27,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="spacer-20"></div>
+                        <div class="spacer-30"></div>
                         <div class="btn-group inline pull-left">
                             <a href="{{ route('posts.edit', $post) }}" class="btn btn-sm btn-info">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
                             <form action="{{ route('posts.destroy', $post) }}" method="POST">

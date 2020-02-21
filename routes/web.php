@@ -19,11 +19,14 @@ Route::get('/', function () {
     ]);
 });
 
-Route::resource('posts', 'PostController');
-
 // Route::get('posts', 'PostController@index');
 // Route::get('post/{id}', 'PostController@index');
 // Route::get('show_post/{id}', 'PostController@show')->name('post.show');
 // Route::get('/create_post', function () {
 //     return view('create_post');
 // });
+Route::resource('posts', 'PostController');
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
