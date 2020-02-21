@@ -19,9 +19,9 @@
                         </header>
                     </div>
                     <div class="col-2 text-right">
-                        <a href="{{ route('posts.create') }}" class="btn btn-sm btn-info">Add Post</a>
+                        <a href="{{ route('posts.create') }}" class="btn btn-sm btn-info text-white">Add Post</a>
                     </div>
-                    <ul class="style1">
+                    <ul class="style1 col-12">
                         @foreach ($posts as $post)
                         <div class="col-12 {{ $loop->index === 0 ? 'first' : '' }}">
                             <li>
