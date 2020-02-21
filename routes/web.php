@@ -15,7 +15,7 @@ use App\Post;
 
 Route::get('/', function () {
     return view('welcome', [
-        'posts' => Post::orderBy('id', 'desc')->get()
+        'posts' => Post::orderBy('id', 'desc')->take(7)->get()
     ]);
 });
 

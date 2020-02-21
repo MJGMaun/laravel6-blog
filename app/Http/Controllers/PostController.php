@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        if (request('tag')) {
+            $posts = Tag::where('name', request('tag'))->firstOrFail()->posts;
+        } else {
+            $posts = Post::orderBy('id', 'desc')->get();
+        }
         return view('post/index', [
-            'posts' => Post::orderBy('id', 'desc')->get()
+            'posts' => $posts
         ]);
     }
 
@@ -28,8 +33,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
-        return view('post/create');
+        return view('post/create', [
+            'tags' => Tag::all()
+        ]);
     }
 
     /**
@@ -40,8 +46,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        Post::create($this->validatePost());
+        // dd(request()->all());
+        $this->validatePost();
+
+        $post = new Post(request(['title', 'excerpt', 'content'])); // Associatie Array
+        $post->user_id = 1;
+        $post->save();
+
+        $post->tags()->attach(request('tags'));
+
         return redirect(route('posts.index'));
     }
 
@@ -51,11 +64,12 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
         //
-        // $post = Post::findOrFail($id);
-        return view('post/show', compact('post'));
+        $post = Post::findOrFail($id);
+        $user = $post->user;
+        return view('post/show', compact('post', 'user'));
     }
 
     /**
@@ -101,7 +115,8 @@ class PostController extends Controller
         return request()->validate([
             'title' => ['required'],
             'excerpt' => ['required'],
-            'content' => 'required'
+            'content' => 'required',
+            'tags' => 'exists:tags,id'
         ]);
    }
 

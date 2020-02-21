@@ -27,16 +27,18 @@
                         <div class="col-2 text-right">
                             <a href="{{ route('posts.create') }}" class="btn btn-sm btn-info">Add Post</a>
                         </div>
-                    </div>
-                    <ul class="style1">
-                        @foreach ($posts as $post)
-                        <li class="{{ $loop->index === 0 ? 'first' : '' }}">
-                            <a href="{{ $post->path() }}"> {{ $post->title   }}</a>
-                            <div> {{ $post->excerpt }} <a href="{{ $post->path() }}" class="text-primary">Show more
-                                </a></div>
-                        </li>
-                        @endforeach
-                    </ul>
+                        <ul class="style1">
+                            @foreach ($posts as $post)
+                            <div class="col-12 {{ $loop->index === 0 ? 'first' : '' }}">
+                                <li>
+                                    <a href="{{ $post->path() }}"> {{ $post->title   }}</a><br>
+                                    {{ $post->excerpt }}
+                                    <a href="{{ $post->path() }}" class="text-primary">Show more</a>
+                                </li>
+                            </div>
+                            @endforeach
+                        </ul>
+                </div>
                 </div>
             </div>
         </div>

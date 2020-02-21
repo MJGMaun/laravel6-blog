@@ -38,9 +38,11 @@
                             </header>
                             <ul class="style1">
                                 @foreach ($posts as $post)
-                                <li class="{{ $loop->index === 0 ? 'first' : '' }}">
-                                    <a href="{{ $post->path() }}"> {{ $post->title }}</a>
-                                </li>
+                                <div class="{{ $loop->index === 0 ? 'first' : '' }}">
+                                    <li>
+                                        <a href="{{ $post->path() }}"> {{ $post->title }}</a>
+                                    </li>
+                                </div>
                                 @endforeach
                             </ul>
                         </section>
